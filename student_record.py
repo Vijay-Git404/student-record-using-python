@@ -39,13 +39,20 @@ def calculate_average_grade(name):
             print(f"No grades available for student {name}.")
     else:
         print(f"Student {name} does not exist.")
+def list_students_by_course(course):
+    students=[]
+    for name, info in student_record.items():
+        if course in info["courses"]:
+            students.append(name)
+    print(f"Students enrolled in {course}: {', '.join(students)}")
 while True:
     print("\nMenu:")
     print("1. Add Student")
     print("2. Add Grade")
     print("3. Check Enrollment")
     print("4. Calculate Average Grade")
-    print("5. Exit")
+    print("5. List Students by Course")
+    print("6. Exit")
     choice = input("Enter your choice: ")
     
     if choice == '1':
@@ -62,6 +69,9 @@ while True:
         name=input("Enter student name: ")
         calculate_average_grade(name)
     elif choice == '5':
+        course=input("Enter course name: ")
+        list_students_by_course(course)
+    elif choice == '6':
         break
     else:
         print("Invalid choice. Please try again.")
