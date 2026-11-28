@@ -72,6 +72,7 @@ while True:
         course=input("Enter course name: ")
         list_students_by_course(course)
     elif choice == '6':
+        print("Exiting the program.")
         break
     else:
         print("Invalid choice. Please try again.")
